@@ -23,7 +23,7 @@ public class Controller {
 
     @GetMapping("/persons/by-age")
     public List<Person> getPersonsByAge(@RequestParam int age) {
-        List<Person> people = customizedCrudRepository.findByAge(age);
+        List<Person> people = customizedCrudRepository.findByAgeLessThanOrderByAgeAsc(age);
         return people;
     }
 
